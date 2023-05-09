@@ -1,0 +1,137 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 16px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(21, 18, 27, 0);
+  color: #cdd6f4;
+}
+
+tooltip {
+  background: #1e1e2e;
+  opacity: 0.8;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #11111b;
+}
+
+tooltip label{
+  color: #cdd6f4;
+}
+
+#workspaces button {
+  padding: 5px;
+  color: #cacaca;
+  margin-right: 5px;
+}
+
+#workspaces button.active {
+  color: #a6adc8;
+}
+
+#workspaces button.focused {
+  color: #111111;
+  background: #4582ec;
+  border-radius: 10px;
+}
+
+#workspaces button.urgent {
+  color: #11111b;
+  background: #a6e3a1;
+  border-radius: 10px;
+}
+
+#workspaces button:hover {
+  background: #11111b;
+  color: #cdd6f4;
+  border-radius: 10px;
+}
+
+/* General info */
+#custom-launcher,
+#workspaces,
+#window,
+#cpu,
+#disk,
+#memory,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#temperature {
+  background: #1e1e2e;
+  opacity: 0.8;
+  padding: 0px 10px;
+  margin: 3px 0px;
+  margin-top: 10px;
+  border: 0px;
+}
+
+/* Item round left side */
+#pulseaudio,
+#temperature,
+#custom-launcher,
+#cpu {
+  border-radius: 10px 0px 0px 10px;
+}
+
+/* Item round right side */
+#workspaces,
+#pulseaudio.microphone,
+#battery,
+#disk {
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 10px;
+}
+
+/* Item round both sides */
+#tray,
+#clock {
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#temperature.critical {
+  color: #e92d4d;
+}
+
+#workspaces {
+  padding-right: 0px;
+  padding-left: 5px;
+}
+
+#window {
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#custom-launcher {
+  color: #4582ec;
+  margin-left: 10px;
+  border-right: 0px;
+}
+
+#pulseaudio {
+  color: #89b4fa;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#pulseaudio.microphone {
+  color: #cba6f7;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#battery {
+  color: #a6e3a1;
+  border-left: 0px;
+}
