@@ -12,7 +12,7 @@
 
     "custom/launcher": {
         "format": "",
-        "on-click": "pkill rofi; rofi -show drun",
+        "on-click": "pkill rofi; rofi -drun-use-desktop-cache -show drun",
         "tooltip": false
     },
 
