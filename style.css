@@ -1,14 +1,11 @@
 * {
     font-family: CodeNewRoman Nerd Font;
     font-size: 15px;
-    color: #2c2c2c;
     min-height: 30px;
 }
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.6);
-    transition-property: background-color;
-    transition-duration: .5s;
 }
 
 window#waybar.hidden {
@@ -83,16 +80,15 @@ button:hover {
     padding-left: 15px;
     padding-right: 5px;
     border-radius: 30px 0px 0px 30px;
-    background-color: #6ca8cf;
+    background-color: #69cfaf;
     color: #2c2c2c;
-    border-right: 1px solid #2c2c2c; 
 }
 
 #clock.time {
     padding-left: 5px;
     padding-right: 15px;
     border-radius: 0px 30px 30px 0px;
-    background-color: #7ca198;
+    background-color: #69becf;
     color: #2c2c2c;
 }
 
@@ -101,7 +97,10 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #404040;
+    padding: 0px 10px;
+    border-left: 1px solid #cacaca;
+    border-right: 1px solid #cacaca;
 }
 
 #tray > .passive {
@@ -115,7 +114,7 @@ label:focus {
 
 #workspaces,
 #clock,
-#wireplumber,
+#pulseaudio,
 #network,
 #cpu,
 #keyboard-state,
@@ -123,7 +122,6 @@ label:focus {
     color: #2c2c2c;
 }
 
-#wireplumber,
 #network,
 #cpu,
 #battery {
@@ -132,14 +130,24 @@ label:focus {
 
 #network,
 #cpu,
-#keyboard-state.numlock,
 #battery {
-    border-left: 1px solid #2c2c2c;
+    /* border-left: 1px solid #2c2c2c; */
 }
 
-#wireplumber {
-    background-color: #567ae1;
+#pulseaudio {
+    background-color: #587dd3;
+}
+
+#pulseaudio.sink {
+    padding-left: 12px;
+    padding-right: 8px;
     border-radius: 30px 0px 0px 30px;
+}
+
+#pulseaudio.source {
+    background-color: #5899d3;
+    padding-left: 10px;
+    padding-right: 13px;
 }
 
 #network {
@@ -154,20 +162,8 @@ label:focus {
     background-color: #56e1dd;
 }
 
-#keyboard-state {
-    background: #56e19e;
-    padding: 0;
-}
-
-#keyboard-state.numlock label,
-#keyboard-state.capslock label.capslock.locked {
-    font-size: 20px;
-    padding-left: 5px;
-    padding-right: 10px;
-}
-
 #battery {
-    background-color: #5ee156;
+    background-color: #58d379;
     color: #2c2c2c;
 }
 

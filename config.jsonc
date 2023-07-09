@@ -5,14 +5,21 @@
     // "width": 1280, // Waybar width
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/launcher", "sway/workspaces", "sway/window"],
-    "modules-center": ["clock#date", "clock#time"],
+    "modules-left": [
+        "custom/launcher",
+        "sway/workspaces",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock#date",
+        "tray",
+        "clock#time"
+    ],
     "modules-right": [
-        "wireplumber",
+        "pulseaudio#sink",
+        "pulseaudio#source",
         "network",
         "cpu",
-        "keyboard-state#numlock",
-        "keyboard-state#capslock",
         "battery"
     ],
 
@@ -44,6 +51,31 @@
     },
 
     // modules-right
+    "pulseaudio#sink": {
+        "format": "{icon}{volume}%",
+        "format-muted": " ",
+        "format-bluetooth": "{icon}󰂯 {volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 6.666%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 6.666%-",
+        "format-icons": {
+            "headphone": "󰋋 ",
+            "headset": "󰋎 ",
+            "phone": " ",
+            "hands-free": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
+        }
+    },
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "  {essid}",
@@ -70,22 +102,6 @@
         "format-full": "",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
         // "format-alt": "{time} {icon}", // Time to empty
-    },
-    "keyboard-state#numlock": {
-        "numlock": true,
-        "format": "{icon}",
-        "format-icons": {
-            "locked": "󰎠",
-            "unlocked": "󱧓"
-        }
-    },
-    "keyboard-state#capslock": {
-        "capslock": true,
-        "format": "{icon}",
-        "format-icons": {
-            "locked": "󰪛",
-            "unlocked": ""
-        }
     }
 }
 
