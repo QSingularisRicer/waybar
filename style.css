@@ -7,7 +7,6 @@
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.6);
-    color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -97,87 +96,8 @@ button:hover {
     color: #2c2c2c;
 }
 
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray {
-    padding: 0 10px;
-    color: #ffffff;
-}
-
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-
 label:focus {
     background-color: #000000;
-}
-
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
-}
-
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
 }
 
 #tray {
@@ -193,8 +113,49 @@ label:focus {
     background-color: #eb4d4b;
 }
 
+#workspaces,
+#clock,
+#wireplumber,
+#network,
+#cpu,
+#keyboard-state,
+#battery {
+    color: #2c2c2c;
+}
+
+#wireplumber,
+#network,
+#cpu,
+#battery {
+    padding: 0 10px;
+}
+
+#network,
+#cpu,
+#keyboard-state.numlock,
+#battery {
+    border-left: 1px solid #2c2c2c;
+}
+
+#wireplumber {
+    background-color: #567ae1;
+    border-radius: 30px 0px 0px 30px;
+}
+
+#network {
+    background-color: #56b5e1;
+}
+
+#network.disconnected {
+    background-color: #f1e75a;
+}
+
+#cpu {
+    background-color: #56e1dd;
+}
+
 #keyboard-state {
-    background: #97e1ad;
+    background: #56e19e;
     padding: 0;
 }
 
@@ -202,19 +163,25 @@ label:focus {
 #keyboard-state.capslock label.capslock.locked {
     font-size: 20px;
     padding-left: 5px;
-    padding-right: 11px;
+    padding-right: 10px;
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: #5ee156;
     color: #2c2c2c;
 }
 
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#battery.warning {
+    background-color: #f1e75a;
+}
+
+#battery.critical {
+    background-color: #eb4d4b;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
 }
