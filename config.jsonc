@@ -19,7 +19,7 @@
         "pulseaudio#sink",
         "pulseaudio#source",
         "network",
-        "cpu",
+        // "cpu",
         "battery"
     ],
 
